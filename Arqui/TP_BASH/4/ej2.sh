@@ -10,7 +10,7 @@ while [[ ! "$opcion_nivel1" =~ ^[3]$ ]]; do
     echo ""
 
     while [[ ! "$opcion_nivel1" =~ ^[1,2,3]$ ]]; do
-    read -p "Por favor, introduce una opción válida (1,2,3): " opcion_nivel1
+        read -p "Por favor, introduce una opción válida (1,2,3): " opcion_nivel1
     done
 
     if [[ "$opcion_nivel1" -eq 1 ]]; then
