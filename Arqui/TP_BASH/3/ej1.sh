@@ -3,6 +3,7 @@ clear
 
 read -p "Ingrese la ruta del archivo: " ruta
 
+# verifica si esa ruta archivo/directorio, existe
 if [[ -e "$ruta" ]]; then
   echo ""
   echo "Archivo: $ruta"
@@ -10,6 +11,7 @@ if [[ -e "$ruta" ]]; then
   echo "El archivo $ruta existe"
   echo ""
 
+  # imprime que tipo de archivo es o si es un directorio
   if [[ -b "$ruta" ]]; then
     echo "Es un archivo especial de bloques"
   elif [[ -c "$ruta" ]]; then
@@ -23,7 +25,9 @@ if [[ -e "$ruta" ]]; then
   fi
 
   echo ""
+  # verifica si es un archivo ordinario o directorio, para evitar los archivos especiales
   if [[ -f "$ruta" || -d "$ruta" ]]; then
+  # imprime si ese archivo/directorio tiene permisos de lectura, escritura y/o ejecución
     if [[ -r "$ruta" ]]; then
       echo "Tiene permiso de lectura"
       echo ""
@@ -37,9 +41,11 @@ if [[ -e "$ruta" ]]; then
       echo ""
     fi
   else
+    # en caso de ser un archivo especial, no se muestran los permisos
     echo "No se muestran permisos para archivos especiales."
   fi
 
 else
-  echo "El archivo no existe"
+  # si la ruta no existe, se muestra por pantalla la leyenda que no existe
+  echo "El archivo/directorio no existe"
 fi

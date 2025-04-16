@@ -1,15 +1,17 @@
 #!/bin/bash
 clear
 
+# se pide el ingreso de valor nota
 read -p "Ingrese la nota numérica: " nota
 
-
+# se ejecuta un bucle while, que mientras la nota este vacia, y sea diferente de 0 a 10, lo vuelva a ingresar
 while [[ -z "$nota" || "$nota" =~ [^0-9] || "$nota" -lt 0 || "$nota" -gt 10 ]]; do
   echo "Por favor, introduce un número válido (solo números positivos)"
   read -p "Introduce una nota: " nota
 done
 
 
+# pendiendo del valor de nota, imprime su equivalente en texto
 if [ "$nota" -ge 9 ]; then
   echo "Sobresaliente"
   exit 1

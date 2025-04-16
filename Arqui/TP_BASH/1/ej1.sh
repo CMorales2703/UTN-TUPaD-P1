@@ -1,9 +1,8 @@
 #!/bin/bash
-
-# Limpiar pantalla (opcional)
+# Limpia la pantalla
 clear
 
-# Mostrar el valor de las variables de entorno
+# muestra el valor de las variables de entorno
 echo "La variable LOGNAME tiene el valor: $LOGNAME"
 echo "La variable HOME tiene el valor: $HOME"
 echo "La variable SHELL tiene el valor: $SHELL"
